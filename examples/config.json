@@ -1,0 +1,49 @@
+{
+  "llm": {
+    "model": "gpt-4o-mini"
+  },
+  "browser": {
+    "headless": false,
+    "minimum_wait_page_load_time": 1,
+    "maximum_wait_page_load_time": 10,
+    "viewport": {
+      "width": 1280,
+      "height": 1100
+    }
+  },
+  "paths": {
+    "profile_dir_template": "~/.config/browseruse/profiles/{platform}",
+    "trace_path_template": "/tmp/wifebot/{platform}"
+  },
+  "user_profile": {
+    "gender": "man",
+    "looking_for": "woman",
+    "personality_traits": [
+      "Funny and sarcastic",
+      "Direct and to the point",
+      "Honest and straightforward", 
+      "Confident and assertive",
+      "Charismatic and charming",
+      "Intelligent and witty",
+      "Adventurous and spontaneous"
+    ],
+    "preferences": [
+      "20-30 years old",
+      "150-170 cm tall",
+      "Biologically a female (non-transgender)",
+      "Slim build (REALLY IMPORTANT)",
+      "Light complexion",
+      "Intelligent (high IQ and EQ) - you can see it by the way she answers questions and her education"
+    ]
+  },
+  "engagement": {
+    "default_language": "Hebrew",
+    "fallback_language": "English",
+    "guidelines": [
+      "Be funny, confident, and authentic based on my personality traits",
+      "Reference specific details from their profiles to show genuine interest",
+      "Ask engaging follow-up questions to keep conversations flowing",
+      "Be authentic and maintain confident, intelligent persona"
+    ]
+  }
+}

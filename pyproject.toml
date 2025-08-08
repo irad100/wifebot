@@ -1,0 +1,20 @@
+[project]
+name = "wifebot"
+version = "0.1.0"
+description = "The bot I use to find my wife"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "browser-use>=0.5.10",
+    "jinja2>=3.1.6",
+    "python-dotenv>=1.1.1",
+]
+
+[project.scripts]
+wifebot = "wifebot.main:main"
+
+[tool.uv]
+package = true
+
+[tool.setuptools.packages.find]
+exclude = ["prompts*"]
