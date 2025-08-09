@@ -92,7 +92,7 @@ def load_template(template_name: str, prompts_dir: Optional[str] = None) -> str:
     Load a template file for rendering.
     
     Args:
-        template_name: Name of the template file (with .tpl extension)
+        template_name: Name of the template file (e.g., 'base_task.jinja')
         prompts_dir: Optional directory containing templates. If None, uses project_root/prompts/
         
     Returns:
@@ -122,7 +122,7 @@ def render_prompt_template(template_name: str, config: Dict[str, Any], prompts_d
     Load and render a prompt template with configuration values.
     
     Args:
-        template_name: Name of the template file (with .tpl extension)
+        template_name: Name of the template file (e.g., 'base_task.jinja')
         config: Configuration dictionary to use for template variables
         prompts_dir: Optional directory containing templates. If None, uses project_root/prompts/
         

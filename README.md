@@ -109,7 +109,7 @@ wifebot --interactive
 - `wifebot.platform.Platform`: Base runner that wires your config into a `browser_use` `BrowserSession` and an LLM-backed `Agent`.
 - `wifebot.factory.PlatformFactory`: Builds CLI, normalizes flags, creates platforms, and supports interactive/all modes.
 - `wifebot/*Platform` (e.g., `TinderPlatform`): Implements `name`, `url`, and `platform_instructions`.
-- Prompts: `prompts/base_task.tpl` + `{platform}_instructions.txt` are concatenated at runtime to generate the agent’s task.
+- Prompts: `prompts/base_task.jinja` + `{platform}_instructions.txt` are concatenated at runtime to generate the agent’s task.
 
 Directory map:
 
@@ -120,7 +120,7 @@ wifebot/
   main.py            # CLI entrypoint (console script: wifebot)
   bumble.py | tinder.py | hinge.py | okcupid.py
 prompts/
-  base_task.tpl
+  base_task.jinja
   bumble_instructions.txt | tinder_instructions.txt | ...
 ```
 
@@ -161,7 +161,7 @@ Defaults (if not overridden by flags or config):
 
 Prompts and templates:
 
-- Edit `prompts/base_task.tpl` to change the global agent persona/behavior.
+- Edit `prompts/base_task.jinja` to change the global agent persona/behavior.
 - Edit platform instruction files (e.g., `prompts/tinder_instructions.txt`) to tune site-specific behavior.
 - You can also render templates with Jinja expressions in templates if needed.
 
@@ -213,7 +213,7 @@ uv run wifebot --interactive
   - A: Yes, use `--model`. Otherwise it reads from the config file.
 
 - Q: How do I customize behavior?
-  - A: Edit `prompts/base_task.tpl` and the `{platform}_instructions.txt` files.
+  - A: Edit `prompts/base_task.jinja` and the `{platform}_instructions.txt` files.
 
 ---
 
@@ -229,7 +229,7 @@ Licensed under the MIT License. See [`LICENSE`](LICENSE) for details.
 flowchart TD;
   U[User / CLI] -->|args| F[PlatformFactory];
   F -->|create| P[Platform];
-  P -->|compose| T[Task = base_task.tpl + platform_instructions];
+  P -->|compose| T[Task = base_task.jinja + platform_instructions];
   P -->|configure| B[BrowserSession];
   P -->|configure| L[LLM ChatOpenAI];
   B --> A[Agent];

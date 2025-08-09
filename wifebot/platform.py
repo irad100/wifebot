@@ -45,7 +45,7 @@ class Platform(ABC):
             self.config = {}
         
         # Load and render base task template with configuration
-        self.base_task = render_prompt_template('base_task.tpl', self.config)
+        self.base_task = render_prompt_template('base_task.jinja', self.config)
         
         # Constructor defaults
         defaults = {
