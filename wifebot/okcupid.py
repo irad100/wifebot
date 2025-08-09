@@ -3,7 +3,7 @@ OkCupid dating platform implementation.
 """
 
 from .platform import Platform
-from .config_loader import load_prompt
+from .loader import load_prompt
 
 
 class OkCupidPlatform(Platform):

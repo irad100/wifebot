@@ -6,7 +6,7 @@ from abc import ABC, abstractmethod
 from dotenv import load_dotenv
 from browser_use import Agent, BrowserSession, BrowserProfile
 from browser_use.llm import ChatOpenAI
-from .config_loader import (
+from .loader import (
     load_config, get_default_config_value,
     get_profile_dir, get_trace_path, render_prompt_template
 )

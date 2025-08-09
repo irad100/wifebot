@@ -10,7 +10,7 @@ from .bumble import BumblePlatform
 from .tinder import TinderPlatform
 from .hinge import HingePlatform
 from .okcupid import OkCupidPlatform
-from .config_loader import load_config
+from .loader import load_config
 
 
 class PlatformFactory:
